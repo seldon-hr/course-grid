@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  font-family: 'Lato', sans-serif;
+  width: 550px;
+}
+
+.container {
+  background: turquoise;
+  width: 180px;
+  height: 180px;
+  position: relative; //los hijos se alinean respecto a el, por eso el padre
+}
+
+.element {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+.element1 {
+  @extend .element;
+  background: papayawhip;
+  position: absolute;
+  left: 0;
+  top: 0; //Se posiciona en el origin
+}
+
+.element2 {
+  @extend .element;
+  background: papayawhip;
+  position: absolute;
+  left: 0; //Lo posiciona en el origen de nuevo
+  top:  50%; //Este lo baja a la mitad, pero va a aparecer a partir del primer borde de este objeto, por eso usamos transform
+  transform: translate(0, -50%); //Transform le dice que transalte el punto 0 al cincuenta porciento del objeto, así esta a la mitad del padre con la mitad del hijo.
+}
+
+.element3 {
+  @extend .element;
+  background: papayawhip;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transform: translate(0, -100%); //Con el top se esconde, por eso usamos que en cordenada x tenga 0, pero en y, -100% de su tamaño, así obtenemos el objeto en el fondo.
+}
+
+.element4 {
+  @extend .element;
+  background: pink;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.element5 {
+  @extend .element;
+  background: pink;
+  position: absolute;
+  left: 50%; //left y top, lo bajan, entonces con transalte acomodadomos para que este con el centro respectivo de padre e hijo.
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.element6 {
+  @extend .element;
+  background: pink;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -100%);
+}
+
+.element7 {
+  @extend .element;
+  background: lightcyan;
+  position: absolute;
+  left: 100%;
+  transform: translate(-100%, 0);
+}
+
+.element8 {
+  @extend .element;
+  background: lightcyan;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(-100%, -50%);
+}
+
+.element9 {
+  @extend .element;
+  background: lightcyan;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(-100%, 50%);
+}
