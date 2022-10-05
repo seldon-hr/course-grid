@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Valores como 
+    *outer Valor externo de visualización
+    Cómo se comporta el elemento en el diseñon en relación con otros elementos.
+    *inner
+    Cómo se comportan los hijos directos de ese elemento
+    
+    *display: grid
+    Esto es igual a tener un valor outer como block, y grid commo inner
+    
+    */
